@@ -13,7 +13,6 @@ import javax.servlet.jsp.tagext.JspTag;
 import javax.servlet.jsp.tagext.TagSupport;
 
 import com.googlecode.exttag.Description;
-import com.googlecode.exttag.tags.AbstractTag;
 import com.googlecode.exttag.tags.Ext;
 
 /**
@@ -58,7 +57,7 @@ public class TldGenerator {
 		for (File file : list) {
 			String path = file.getCanonicalPath();
 			path = path.replace("/", ".").replace("\\", ".");
-			path = path.substring(path.indexOf(AbstractTag.class.getPackage()
+			path = path.substring(path.indexOf(Ext.class.getPackage()
 					.getName())); // 去掉src
 			path = path.substring(0, path.length() - 5); // 去掉".java"
 			Class<?> tagClass = Class.forName(path);
