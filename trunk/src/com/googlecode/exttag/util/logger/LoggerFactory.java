@@ -1,6 +1,5 @@
 package com.googlecode.exttag.util.logger;
 
-
 /**
  * 日志输出器工厂
  * @author <a href="mailto:liangfei0201@gmail.com">liangfei</a>
@@ -14,7 +13,17 @@ public class LoggerFactory {
 	}
 
 	private static LoggerProvider findLoggerProvider() {
-		return new JdkLoggerProvider();
+	    try {
+            LoggerProvider loggerProvider = new Log4jLoggerProvider();
+            Logger logger = loggerProvider.getLogger(LoggerFactory.class.getName());
+            logger.info("Using " + loggerProvider.getClass().getName());
+            return loggerProvider;
+        } catch (Throwable e) {
+            LoggerProvider loggerProvider = new JdkLoggerProvider();
+            Logger logger = loggerProvider.getLogger(LoggerFactory.class.getName());
+            logger.info("Using " + loggerProvider.getClass().getName());
+            return loggerProvider;
+        }
 	}
 
 	private static LoggerProvider loggerProvider;
