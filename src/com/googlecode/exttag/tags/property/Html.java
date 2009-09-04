@@ -11,11 +11,8 @@ public class Html extends AbstractMapTag {
 		String html = "";
 		if (bodyContent != null)
 			html = filter(bodyContent.getString());
+		html = html.replaceAll("\\s+", " ");
 		html = html.replace("\\", "\\\\");
-		html = html.replace("\t", "\\t");
-		html = html.replace("\f", "\\f");
-		html = html.replace("\r", "\\r");
-		html = html.replace(" ", "\\n ");
 		html = html.replace("\"", "\\\"");
 		html = html.replace("\'", "\\\'");
 		return "\"" + html + "\"";
