@@ -1,4 +1,4 @@
-package com.googlecode.exttag;
+package com.googlecode.exttag.tools;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -11,6 +11,11 @@ import java.util.List;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 import javax.servlet.jsp.tagext.JspTag;
 import javax.servlet.jsp.tagext.TagSupport;
+
+import com.googlecode.exttag.Description;
+import com.googlecode.exttag.ExtTag;
+import com.googlecode.exttag.ExtTagListener;
+import com.googlecode.exttag.tags.UI;
 
 /**
  * EXT标签TLD文件生成器
@@ -54,7 +59,7 @@ public class TldGenerator {
 		for (File file : list) {
 			String path = file.getCanonicalPath();
 			path = path.replace("/", ".").replace("\\", ".");
-			path = path.substring(path.indexOf(this.getClass().getPackage()
+			path = path.substring(path.indexOf(ExtTag.class.getPackage()
 					.getName())); // 去掉src
 			path = path.substring(0, path.length() - 5); // 去掉".java"
 			Class<?> tagClass = Class.forName(path);
@@ -183,7 +188,7 @@ public class TldGenerator {
 		try {
 			new TldGenerator()
 					.generate(
-							"src/" + TldGenerator.class.getPackage().getName().replace('.', '/') + "/tags/",
+							"src/" + UI.class.getPackage().getName().replace('.', '/') + "/",
 							"src/META-INF/exttag.tld");
 		} catch (Exception e) {
 			e.printStackTrace();
