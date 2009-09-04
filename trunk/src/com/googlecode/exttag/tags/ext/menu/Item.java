@@ -12,6 +12,11 @@ public class Item extends BaseItem {
 	private Integer showDelay;
 	private String text;
 
+	@Override
+	protected String getComponentName() {
+		return null;
+	}
+
 	public String getHref() {
 		return href;
 	}
