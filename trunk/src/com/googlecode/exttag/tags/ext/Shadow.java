@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -9,7 +9,7 @@ import com.googlecode.exttag.Description;
  * 
  */
 @Description("Simple class that can provide a shadow effect for any element. Note that the element MUST be absolutely positioned, and the shadow does not provide any shimming. This should be used only in simple cases -- for more advanced functionality that can also provide the same shadow effect, see the Ext.Layer class. ")
-public class Shadow extends ComponentTag {
+public class Shadow extends AbstractMapTag {
 	private String mode;
 	private String offset;
 

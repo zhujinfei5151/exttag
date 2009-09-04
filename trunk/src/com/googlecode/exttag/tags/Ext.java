@@ -4,11 +4,10 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
 
-import com.googlecode.exttag.ExtConfig;
-import com.googlecode.exttag.ExtScope;
-import com.googlecode.exttag.ExtTag;
+import com.googlecode.exttag.Configuration;
+import com.googlecode.exttag.Scope;
 
-public class UI extends ExtTag {
+public class Ext extends AbstractTag {
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,7 +15,7 @@ public class UI extends ExtTag {
 
 	public String getTitle() {
 		if (title == null)
-			title = "SF-Express C2 System";
+		    return "";
 		return title;
 	}
 
@@ -57,17 +56,18 @@ public class UI extends ExtTag {
 							"<html><head><title>"
 									+ title
 									+ "</title>"
-									+ ExtConfig.getImports()
-									+ ExtConfig.parseCustomStyles(styles)
-									+ ExtConfig.parseCustomScripts(scripts)
+									+ Configuration.getStyles()
+									+ Configuration.getScripts()
+									+ Configuration.parseStyles(styles, false)
+									+ Configuration.parseScripts(scripts, false)
 									+ "<script type=\"text/javascript\" src=\""
-									+ ExtConfig.getHome()
+									+ Configuration.getHome()
 									+ "src/locale/ext-lang-"
 									+ pageContext.getRequest().getLocale()
 									+ ".js\"></script>"
 									+ "</head><body><script type=\"text/javascript\">"
 									+ "Ext.onReady(function() {Ext.QuickTips.init();Ext.state.Manager.setProvider(new Ext.state.CookieProvider());");
-			super.pushExtScope(new ExtScope("ui", ExtScope.IN_ROOT));
+			super.pushExtScope(new Scope("ui", Scope.IN_ROOT));
 			return EVAL_BODY_INCLUDE;
 		} catch (IOException e) {
 			throw new JspException(e);

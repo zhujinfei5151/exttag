@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -9,7 +9,7 @@ import com.googlecode.exttag.Description;
  * 
  */
 @Description("A simple utility class for generically masking elements while loading data. If the element being masked has an underlying Ext.data.Store, the masking will be automatically synchronized with the store's loading process and the mask element will be cached for reuse. For all other elements, this mask will replace the element's Updater load indicator and will be destroyed after the initial load. ")
-public class LoadMask extends ComponentTag {
+public class LoadMask extends AbstractMapTag {
 	private String msg;
 	private String msgCls;
 	private Boolean removeMask;

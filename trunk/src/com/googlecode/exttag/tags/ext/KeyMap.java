@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -36,6 +36,6 @@ import com.googlecode.exttag.Description;
 		+ "        shift:true,"
 		+ "        fn: function(){ alert('Control + shift + tab was pressed.'); }"
 		+ "    }" + "]);" + "Note: A KeyMap starts enabled ")
-public class KeyMap extends ComponentTag {
+public class KeyMap extends AbstractMapTag {
 
 }

@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -36,6 +36,6 @@ import com.googlecode.exttag.Description;
 		+ "if(opt.anim.isAnimated()){" + "    opt.anim.stop();" + "}"
 		+ "Composite (Collections of) Elements"
 		+ "For working with collections of Elements, see Ext.CompositeElement ")
-public class Element extends ComponentTag {
+public class Element extends AbstractMapTag {
 
 }

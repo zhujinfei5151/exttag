@@ -3,10 +3,10 @@ package com.googlecode.exttag.tags.property;
 import java.util.List;
 
 import com.googlecode.exttag.Description;
-import com.googlecode.exttag.ListComponentTag;
+import com.googlecode.exttag.tags.AbstractListTag;
 import com.googlecode.exttag.util.ClassUtils;
 
-public class Fields extends ListComponentTag {
+public class Fields extends AbstractListTag {
 
 	private static final long serialVersionUID = 1L;
 

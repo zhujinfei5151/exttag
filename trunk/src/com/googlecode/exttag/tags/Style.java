@@ -2,16 +2,15 @@ package com.googlecode.exttag.tags;
 
 import javax.servlet.jsp.JspException;
 
-import com.googlecode.exttag.ExtScope;
-import com.googlecode.exttag.ExtTag;
+import com.googlecode.exttag.Scope;
 
-public class Style extends ExtTag {
+public class Style extends AbstractTag {
 
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public int doStartTag() throws JspException {
-		super.pushExtScope(new ExtScope("style", ExtScope.IN_ROOT));
+		super.pushExtScope(new Scope("style", Scope.IN_ROOT));
 		return EVAL_BODY_BUFFERED;
 	}
 

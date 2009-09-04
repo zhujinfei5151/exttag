@@ -1,6 +1,6 @@
 package com.googlecode.exttag;
 
-public class ExtScope {
+public class Scope {
 
 	private final String parentName;
 
@@ -12,7 +12,7 @@ public class ExtScope {
 
 	private final int scopeType;
 
-	public ExtScope(String parentName, int scopeType) {
+	public Scope(String parentName, int scopeType) {
 		if (scopeType != IN_ROOT && scopeType != IN_LIST && scopeType != IN_MAP)
 			throw new java.lang.IllegalArgumentException("scopeType error!");
 		this.parentName = parentName;

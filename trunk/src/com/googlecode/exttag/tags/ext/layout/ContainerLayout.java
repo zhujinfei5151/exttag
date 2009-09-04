@@ -1,10 +1,10 @@
 package com.googlecode.exttag.tags.ext.layout;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("Every layout is composed of one or more Ext.Container elements internally, and ContainerLayout provides the basic foundation for all other layout classes in Ext. It is a non-visual class that simply provides the base logic required for a Container to function as a layout. This class is intended to be extended and should generally not need to be created directly via the new keyword. ")
-public class ContainerLayout extends ComponentTag {
+public class ContainerLayout extends AbstractMapTag {
 	private String extraCls;
 	private Boolean renderHidden;
 

@@ -13,9 +13,8 @@ import javax.servlet.jsp.tagext.JspTag;
 import javax.servlet.jsp.tagext.TagSupport;
 
 import com.googlecode.exttag.Description;
-import com.googlecode.exttag.ExtTag;
-import com.googlecode.exttag.ExtTagListener;
-import com.googlecode.exttag.tags.UI;
+import com.googlecode.exttag.tags.AbstractTag;
+import com.googlecode.exttag.tags.Ext;
 
 /**
  * EXT标签TLD文件生成器
@@ -51,7 +50,7 @@ public class TldGenerator {
 		tldOut.println("    <description>ExtTag</description>");
 		tldOut.println("    <listener>");
 		tldOut.println("        <listener-class>"
-				+ ExtTagListener.class.getName() + "</listener-class>");
+				+ TagInitializeListener.class.getName() + "</listener-class>");
 		tldOut.println("    </listener>");
 		File dir = new File(javaDir);
 		List<File> list = new ArrayList<File>();
@@ -59,7 +58,7 @@ public class TldGenerator {
 		for (File file : list) {
 			String path = file.getCanonicalPath();
 			path = path.replace("/", ".").replace("\\", ".");
-			path = path.substring(path.indexOf(ExtTag.class.getPackage()
+			path = path.substring(path.indexOf(AbstractTag.class.getPackage()
 					.getName())); // 去掉src
 			path = path.substring(0, path.length() - 5); // 去掉".java"
 			Class<?> tagClass = Class.forName(path);
@@ -188,7 +187,7 @@ public class TldGenerator {
 		try {
 			new TldGenerator()
 					.generate(
-							"src/" + UI.class.getPackage().getName().replace('.', '/') + "/",
+							"src/" + Ext.class.getPackage().getName().replace('.', '/') + "/",
 							"src/META-INF/exttag.tld");
 		} catch (Exception e) {
 			e.printStackTrace();

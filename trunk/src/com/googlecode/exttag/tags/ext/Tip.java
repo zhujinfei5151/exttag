@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -9,7 +9,7 @@ import com.googlecode.exttag.Description;
  * 
  */
 @Description("This is the base class for Ext.QuickTip and Ext.Tooltip that provides the basic layout and positioning that all tip-based classes require. This class can be used directly for simple, statically-positioned tips that are displayed programmatically, or it can be extended to provide custom tip implementations. ")
-public class Tip extends ComponentTag {
+public class Tip extends AbstractMapTag {
 	private Boolean closable;
 	private String defaultAlign;
 	private Integer maxWidth;

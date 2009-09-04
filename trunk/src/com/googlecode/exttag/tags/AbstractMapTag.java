@@ -1,4 +1,4 @@
-package com.googlecode.exttag;
+package com.googlecode.exttag.tags;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -10,7 +10,17 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 import javax.servlet.jsp.tagext.TagSupport;
 
-public abstract class ComponentTag extends ExtTag {
+import com.googlecode.exttag.Event;
+import com.googlecode.exttag.Scope;
+import com.googlecode.exttag.Variable;
+import com.googlecode.exttag.Reference;
+
+/**
+ * 生成 {xx:yy}风格的JSON
+ * 
+ * @author 梁飞
+ */
+public abstract class AbstractMapTag extends AbstractTag {
 
     private static final long serialVersionUID = 1L;
 
@@ -46,14 +56,14 @@ public abstract class ComponentTag extends ExtTag {
 	public int doStartTag() throws JspException {
 		try {
 			beforeStartTag();
-			if (getCurrentExtScope().getScopeType() != ExtScope.IN_ROOT)
+			if (getCurrentExtScope().getScopeType() != Scope.IN_ROOT)
 				appendComma(pageContext.getOut());
 			if (getVar() == null || getVar().trim().length() == 0) {
 				pageContext.getOut().println(
 						getKeyPrefix() + getComponentOpen());
 				return EVAL_BODY_BUFFERED;
 			} else {
-				if (getCurrentExtScope().getScopeType() != ExtScope.IN_ROOT)
+				if (getCurrentExtScope().getScopeType() != Scope.IN_ROOT)
 					pageContext.getOut().println(getKeyPrefix() + getVar());
 				def = "var " + getVar() + " = " + getComponentOpen();
 				return EVAL_BODY_BUFFERED;
@@ -87,7 +97,7 @@ public abstract class ComponentTag extends ExtTag {
 	}
 
 	private final String getKeyPrefix() {
-		if (getCurrentExtScope().getScopeType() == ExtScope.IN_MAP) {
+		if (getCurrentExtScope().getScopeType() == Scope.IN_MAP) {
 			String prefix = getKey();
 			return (prefix == null ? "" : prefix + ": ");
 		}
@@ -105,8 +115,8 @@ public abstract class ComponentTag extends ExtTag {
 			open = begin;
 		else
 			open = constructor + "(" + filter(getComponentBefore()) + begin;
-		pushExtScope(new ExtScope(getVar(), isList() ? ExtScope.IN_LIST
-				: ExtScope.IN_MAP)); // 设置容器状态
+		pushExtScope(new Scope(getVar(), isList() ? Scope.IN_LIST
+				: Scope.IN_MAP)); // 设置容器状态
 		open = open + filter(getComponentBegin());
 		return open;
 	}
@@ -293,7 +303,7 @@ public abstract class ComponentTag extends ExtTag {
 								if (method.isAnnotationPresent(Variable.class)
                                         || method.isAnnotationPresent(Event.class)
 										|| isVariable((String) value))
-									value = new VariableWrapper(value);
+									value = new Reference((String)value);
 							}
 							map.put(property, value);
 						}

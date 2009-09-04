@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("Standard composite class. Creates a Ext.Element for every element in the collection. "
 		+ "NOTE: Although they are not listed, this class supports all of the set/update methods of Ext.Element. All Ext.Element actions will be performed on all the elements in this collection."
@@ -14,6 +14,6 @@ import com.googlecode.exttag.Description;
 		+ " els.hide(true); // all elements fade out and hide"
 		+ " // or"
 		+ " els.setWidth(100).hide(true);")
-public class CompositeElement extends ComponentTag {
+public class CompositeElement extends AbstractMapTag {
 
 }

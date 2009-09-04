@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -26,6 +26,6 @@ import com.googlecode.exttag.Description;
 		+ "   buttons: Ext.Msg.YESNOCANCEL,"
 		+ "   fn: processResult,"
 		+ "   animEl: 'elId'," + "   icon: Ext.MessageBox.QUESTION" + "});")
-public class MessageBox extends ComponentTag {
+public class MessageBox extends AbstractMapTag {
 
 }

@@ -1,8 +1,8 @@
 package com.googlecode.exttag.tags.property;
 
-import com.googlecode.exttag.ComponentTag;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
-public class Html extends ComponentTag {
+public class Html extends AbstractMapTag {
 
     private static final long serialVersionUID = 1L;
 

@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -21,7 +21,7 @@ import com.googlecode.exttag.Description;
 		+ "        this.save();"
 		+ "    },"
 		+ "    scope : this" + "});")
-public class KeyNav extends ComponentTag {
+public class KeyNav extends AbstractMapTag {
 	private String defaultEventAction;
 	private Boolean disabled;
 	private Boolean forceKeyDown;

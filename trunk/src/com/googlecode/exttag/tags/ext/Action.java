@@ -1,8 +1,8 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
 import com.googlecode.exttag.Variable;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  *
@@ -41,7 +41,7 @@ import com.googlecode.exttag.Variable;
 		+ "});"
 		+ "// Change the text for all components using the action"
 		+ "action.setText('Something else');")
-public class Action extends ComponentTag {
+public class Action extends AbstractMapTag {
 	private Boolean disabled;
 	private String handler;
 	private Boolean hidden;
