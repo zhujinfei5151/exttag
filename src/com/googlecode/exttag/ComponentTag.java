@@ -12,7 +12,9 @@ import javax.servlet.jsp.tagext.TagSupport;
 
 public abstract class ComponentTag extends ExtTag {
 
-	private String var;
+    private static final long serialVersionUID = 1L;
+
+    private String var;
 
 	// protected 不输出
 	protected String getVar() {
