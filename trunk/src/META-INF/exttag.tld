@@ -12328,18 +12328,18 @@
             <description><![CDATA[ tag id ]]></description>
         </attribute>
         <attribute>
-            <name>hidden</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-            <type>java.lang.Boolean</type>
-            <description><![CDATA[ hidden : Boolean  (optional) True to hide the column. Defaults to false.  ]]></description>
-        </attribute>
-        <attribute>
             <name>id</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
             <type>java.lang.String</type>
             <description><![CDATA[ id : String  (optional) Defaults to the column's initial ordinal position. A name which identifies this column. The id is used to create a CSS class name which is applied to all table cells (including headers) in that column. The class name takes the form ofx-grid3-td-idHeader cells will also recieve this class name, but will also have the class x-grid3-hd ]]></description>
+        </attribute>
+        <attribute>
+            <name>hidden</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Boolean</type>
+            <description><![CDATA[ hidden : Boolean  (optional) True to hide the column. Defaults to false.  ]]></description>
         </attribute>
         <attribute>
             <name>header</name>
@@ -14128,18 +14128,18 @@
             <description><![CDATA[ tag id ]]></description>
         </attribute>
         <attribute>
-            <name>hidden</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-            <type>java.lang.Boolean</type>
-            <description><![CDATA[ hidden : Boolean  (optional) True to hide the column. Defaults to false.  ]]></description>
-        </attribute>
-        <attribute>
             <name>id</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
             <type>java.lang.String</type>
             <description><![CDATA[ id : String  (optional) Defaults to the column's initial ordinal position. A name which identifies this column. The id is used to create a CSS class name which is applied to all table cells (including headers) in that column. The class name takes the form ofx-grid3-td-idHeader cells will also recieve this class name, but will also have the class x-grid3-hd ]]></description>
+        </attribute>
+        <attribute>
+            <name>hidden</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Boolean</type>
+            <description><![CDATA[ hidden : Boolean  (optional) True to hide the column. Defaults to false.  ]]></description>
         </attribute>
         <attribute>
             <name>header</name>
