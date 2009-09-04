@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 
 import com.googlecode.exttag.Configuration;
+import com.googlecode.exttag.Event;
 import com.googlecode.exttag.Scope;
 
 public class Ext extends AbstractTag {
@@ -12,6 +13,12 @@ public class Ext extends AbstractTag {
 	private static final long serialVersionUID = 1L;
 
 	private String title;
+
+	private String styles;
+
+	private String scripts;
+
+	private String onReady;
 
 	public String getTitle() {
 		if (title == null)
@@ -23,8 +30,6 @@ public class Ext extends AbstractTag {
 		this.title = title;
 	}
 
-	private String styles;
-
 	public String getStyles() {
 		if (styles == null)
 			return "";
@@ -35,8 +40,6 @@ public class Ext extends AbstractTag {
 		this.styles = styles;
 	}
 
-	private String scripts;
-
 	public String getScripts() {
 		if (scripts == null)
 			return "";
@@ -45,6 +48,17 @@ public class Ext extends AbstractTag {
 
 	public void setScripts(String scripts) {
 		this.scripts = scripts;
+	}
+
+	@Event
+	public String getOnReady() {
+		if (onReady == null)
+			return "";
+		return onReady;
+	}
+
+	public void setOnReady(String onReady) {
+		this.onReady = onReady;
 	}
 
 	@Override
@@ -58,16 +72,16 @@ public class Ext extends AbstractTag {
 									+ "</title>"
 									+ Configuration.getStyles()
 									+ Configuration.getScripts()
-									+ Configuration.parseStyles(styles, false)
-									+ Configuration.parseScripts(scripts, false)
+									+ Configuration.parseStyles(getStyles(), false)
+									+ Configuration.parseScripts(getScripts(), false)
 									+ "<script type=\"text/javascript\" src=\""
 									+ Configuration.getHome()
 									+ "src/locale/ext-lang-"
 									+ pageContext.getRequest().getLocale()
 									+ ".js\"></script>"
 									+ "</head><body><script type=\"text/javascript\">"
-									+ "Ext.onReady(function() {Ext.QuickTips.init();Ext.state.Manager.setProvider(new Ext.state.CookieProvider());");
-			super.pushExtScope(new Scope("ui", Scope.IN_ROOT));
+									+ "Ext.onReady(function() {Ext.QuickTips.init();Ext.state.Manager.setProvider(new Ext.state.CookieProvider());" + getOnReady());
+			super.pushExtScope(new Scope(getLowerClassName(), Scope.IN_ROOT));
 			return EVAL_BODY_INCLUDE;
 		} catch (IOException e) {
 			throw new JspException(e);
