@@ -1,8 +1,8 @@
 package com.googlecode.exttag.tags.ext.util;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
 import com.googlecode.exttag.Variable;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  *
@@ -18,7 +18,7 @@ import com.googlecode.exttag.Variable;
 		+ "        'quit' : true"
 		+ "    });"
 		+ " }" + " Ext.extend(Employee, Ext.util.Observable);")
-public class Observable extends ComponentTag {
+public class Observable extends AbstractMapTag {
 	private String listeners;
 
 	@Variable

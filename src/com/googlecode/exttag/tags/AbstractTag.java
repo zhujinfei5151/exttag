@@ -1,4 +1,4 @@
-package com.googlecode.exttag;
+package com.googlecode.exttag.tags;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -10,6 +10,7 @@ import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 import javax.servlet.jsp.tagext.TagSupport;
 
+import com.googlecode.exttag.Scope;
 import com.googlecode.exttag.util.logger.Logger;
 import com.googlecode.exttag.util.logger.LoggerFactory;
 
@@ -19,7 +20,7 @@ import com.googlecode.exttag.util.logger.LoggerFactory;
  * @author 梁飞
  * 
  */
-public abstract class ExtTag extends BodyTagSupport {
+public abstract class AbstractTag extends BodyTagSupport {
 
     private static final long serialVersionUID = 1L;
     
@@ -45,7 +46,7 @@ public abstract class ExtTag extends BodyTagSupport {
 	 */
 	protected final String getExtClassName() {
 		String name = this.getClass().getName().substring(
-				ExtTag.class.getPackage().getName().length() + 1);
+				AbstractTag.class.getPackage().getName().length() + 1);
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 
@@ -71,24 +72,24 @@ public abstract class ExtTag extends BodyTagSupport {
 	private static final String SCOPE_STACK_KEY = "____EXT_SCOPE_STACK_KEY_____";
 
 	@SuppressWarnings("unchecked")
-	private final Stack<ExtScope> getExtScopeStack() {
-		Stack<ExtScope> stack = (Stack<ExtScope>) super.pageContext
+	private final Stack<Scope> getExtScopeStack() {
+		Stack<Scope> stack = (Stack<Scope>) super.pageContext
 				.getAttribute(SCOPE_STACK_KEY, PageContext.PAGE_SCOPE);
 		if (stack == null) {
-			stack = new Stack<ExtScope>();
+			stack = new Stack<Scope>();
 			super.pageContext.setAttribute(SCOPE_STACK_KEY, stack,
 					PageContext.PAGE_SCOPE);
 		}
 		return stack;
 	}
 
-	protected final ExtScope getCurrentExtScope() {
+	protected final Scope getCurrentExtScope() {
 		if (getExtScopeStack().empty())
-			pushExtScope(new ExtScope(null, ExtScope.IN_ROOT));
+			pushExtScope(new Scope(null, Scope.IN_ROOT));
 		return getExtScopeStack().peek();
 	}
 
-	protected final void pushExtScope(ExtScope extScope) {
+	protected final void pushExtScope(Scope extScope) {
 		getExtScopeStack().push(extScope);
 	}
 

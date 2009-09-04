@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -19,6 +19,6 @@ import com.googlecode.exttag.Description;
 		+ " //or"
 		+ " Ext.EventManager.on('myDiv', 'click', handleClick);"
 		+ " Ext.EventManager.addListener('myDiv', 'click', handleClick);")
-public class EventObject extends ComponentTag {
+public class EventObject extends AbstractMapTag {
 
 }

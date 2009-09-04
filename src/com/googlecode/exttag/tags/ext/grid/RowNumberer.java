@@ -1,8 +1,8 @@
 package com.googlecode.exttag.tags.ext.grid;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
 import com.googlecode.exttag.Variable;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("This is a utility class that can be passed into a Ext.grid.ColumnModel as a column config that provides an automatic row numbering column."
 		+ "Usage:"
@@ -12,7 +12,7 @@ import com.googlecode.exttag.Variable;
 		+ "    {header: 'Name', width: 80, sortable: true},"
 		+ "    {header: 'Code', width: 50, sortable: true},"
 		+ "    {header: 'Description', width: 200, sortable: true}" + " ]);")
-public class RowNumberer extends ComponentTag {
+public class RowNumberer extends AbstractMapTag {
 	private String header;
 	private Boolean sortable;
 	private String width;

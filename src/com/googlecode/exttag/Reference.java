@@ -1,10 +1,10 @@
 package com.googlecode.exttag;
 
-public final class VariableWrapper {
+public final class Reference {
 
-	private final Object value;
+	private final String value;
 
-	public VariableWrapper(Object value) {
+	public Reference(String value) {
 		this.value = value;
 	}
 
@@ -14,7 +14,7 @@ public final class VariableWrapper {
 
 	@Override
 	public String toString() {
-		return String.valueOf(value);
+		return value;
 	}
 
 }

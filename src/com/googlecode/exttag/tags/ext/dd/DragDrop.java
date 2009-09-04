@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext.dd;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("Defines the interface and base operation of items that that can be dragged or can be drop targets. It was designed to be extended, overriding the event handlers for startDrag, onDrag, onDragOver and onDragOut. Up to three html elements can be associated with a DragDrop instance:"
 		+ "linked element: the element that is passed into the constructor. This is the element which defines the boundaries for interaction with other DragDrop objects."
@@ -12,5 +12,5 @@ import com.googlecode.exttag.Description;
 		+ "Since none of the event handlers have been implemented, nothing would actually happen if you were to run the code above. Normally you would override this class or one of the default implementations, but you can also override the methods you want on an instance of the class..."
 		+ "dd.onDragDrop = function(e, id) {"
 		+ "alert('dd was dropped on ' + id);" + "}")
-public class DragDrop extends ComponentTag {
+public class DragDrop extends AbstractMapTag {
 }

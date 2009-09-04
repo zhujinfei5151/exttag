@@ -1,11 +1,11 @@
 package com.googlecode.exttag.tags.ext.tree;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
 import com.googlecode.exttag.Variable;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("Provides sorting of nodes in a TreePanel ")
-public class TreeSorter extends ComponentTag {
+public class TreeSorter extends AbstractMapTag {
 	private Boolean caseSensitive;
 	private String dir;
 	private Boolean folderSort;

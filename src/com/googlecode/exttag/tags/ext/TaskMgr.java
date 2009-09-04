@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -18,6 +18,6 @@ import com.googlecode.exttag.Description;
 		+ "}"
 		+ "Ext.TaskMgr.start(task);"
 		+ "This class is a singleton and cannot be created directly. ")
-public class TaskMgr extends ComponentTag {
+public class TaskMgr extends AbstractMapTag {
 
 }

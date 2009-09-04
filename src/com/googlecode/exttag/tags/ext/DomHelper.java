@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  * 
@@ -20,6 +20,6 @@ import com.googlecode.exttag.Description;
 		+ "    ]"
 		+ "});"
 		+ "For more information and examples, see the original blog post.")
-public class DomHelper extends ComponentTag {
+public class DomHelper extends AbstractMapTag {
 
 }

@@ -7,7 +7,7 @@
     <display-name>ExtTag</display-name>
     <description>ExtTag</description>
     <listener>
-        <listener-class>com.googlecode.exttag.ExtTagListener</listener-class>
+        <listener-class>com.googlecode.exttag.tools.TagInitializeListener</listener-class>
     </listener>
     <tag>
         <name>action</name>
@@ -24687,6 +24687,40 @@
         </attribute>
     </tag>
     <tag>
+        <name>ext</name>
+        <tag-class>com.googlecode.exttag.tags.Ext</tag-class>
+        <body-content>JSP</body-content>
+        <description><![CDATA[  ]]></description>
+        <attribute>
+            <name>id</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+            <description><![CDATA[ tag id ]]></description>
+        </attribute>
+        <attribute>
+            <name>styles</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+            <description><![CDATA[  ]]></description>
+        </attribute>
+        <attribute>
+            <name>scripts</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+            <description><![CDATA[  ]]></description>
+        </attribute>
+        <attribute>
+            <name>title</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+            <description><![CDATA[  ]]></description>
+        </attribute>
+    </tag>
+    <tag>
         <name>bbar</name>
         <tag-class>com.googlecode.exttag.tags.property.Bbar</tag-class>
         <body-content>JSP</body-content>
@@ -25075,40 +25109,6 @@
             <rtexprvalue>true</rtexprvalue>
             <type>java.lang.String</type>
             <description><![CDATA[ tag id ]]></description>
-        </attribute>
-    </tag>
-    <tag>
-        <name>ui</name>
-        <tag-class>com.googlecode.exttag.tags.UI</tag-class>
-        <body-content>JSP</body-content>
-        <description><![CDATA[  ]]></description>
-        <attribute>
-            <name>id</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-            <type>java.lang.String</type>
-            <description><![CDATA[ tag id ]]></description>
-        </attribute>
-        <attribute>
-            <name>styles</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-            <type>java.lang.String</type>
-            <description><![CDATA[  ]]></description>
-        </attribute>
-        <attribute>
-            <name>scripts</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-            <type>java.lang.String</type>
-            <description><![CDATA[  ]]></description>
-        </attribute>
-        <attribute>
-            <name>title</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-            <type>java.lang.String</type>
-            <description><![CDATA[  ]]></description>
         </attribute>
     </tag>
 </taglib>

@@ -1,8 +1,8 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
 import com.googlecode.exttag.Variable;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 /**
  *
@@ -23,7 +23,7 @@ import com.googlecode.exttag.Variable;
 		+ "b      The center of the bottom edge"
 		+ "br     The bottom right corner"
 		+ "Although some Fx methods accept specific custom config parameters, the ones shown in the Config Options section below are common options that can be passed to any Fx method. ")
-public class Fx extends ComponentTag {
+public class Fx extends AbstractMapTag {
 	private String afterCls;
 	private String afterStyle;
 	private Boolean block;

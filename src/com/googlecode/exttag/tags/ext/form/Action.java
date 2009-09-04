@@ -1,13 +1,13 @@
 package com.googlecode.exttag.tags.ext.form;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
 import com.googlecode.exttag.Variable;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("The subclasses of this class provide actions to perform upon Forms."
 		+ "Instances of this class are only created by a Form when the Form needs to perform an action such as submit or load. The Configuration options listed for this class are set through the Form's action methods: submit, load and doAction."
 		+ "The instance of Action which performed the action is passed to the success and failure callbacks of the Form's action methods (submit, load and doAction), and to the actioncomplete and actionfailed event handlers. ")
-public abstract class Action extends ComponentTag {
+public abstract class Action extends AbstractMapTag {
 	private String failure;
 	private String method;
 	private String params;

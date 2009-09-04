@@ -1,7 +1,7 @@
 package com.googlecode.exttag.tags.ext;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("Provides attractive and customizable tooltips for any element. The QuickTips singleton is used to configure and manage tooltips globally for multiple elements in a generic manner. To create individual tooltips with maximum customizability, you should consider either Ext.Tip or Ext.ToolTip."
 		+ "Quicktips can be configured via tag attributes directly in markup, or by registering quick tips programmatically via the register method."
@@ -51,6 +51,6 @@ import com.googlecode.exttag.Description;
 		+ "<input type='button' value='OK' ext:qtitle='OK Button' ext:qwidth='100'"
 		+ "     ext:qtip='This is a quick tip from markup!'></input>"
 		+ "This class is a singleton and cannot be created directly. ")
-public class QuickTips extends ComponentTag {
+public class QuickTips extends AbstractMapTag {
 
 }

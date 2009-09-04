@@ -1,10 +1,10 @@
 package com.googlecode.exttag.tags.ext.dd;
 
-import com.googlecode.exttag.ComponentTag;
 import com.googlecode.exttag.Description;
+import com.googlecode.exttag.tags.AbstractMapTag;
 
 @Description("A specialized drag proxy that supports a drop status icon, Ext.Layer styles and auto-repair. This is the default drag proxy used by all Ext.dd components. ")
-public class StatusProxy extends ComponentTag {
+public class StatusProxy extends AbstractMapTag {
 	private String dropAllowed;
 	private String dropNotAllowed;
 
