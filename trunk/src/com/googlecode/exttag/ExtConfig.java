@@ -4,15 +4,12 @@ public class ExtConfig {
 
 	private static String treeDataProxy = "tree.proxy";
 
-	private static String servletName;
-
 	private static String home;
 
 	private static String imports;
 
-	public static void init(String servletName, String home, String styles,
+	public static void init(String home, String styles,
 			String scripts) {
-		ExtConfig.servletName = servletName;
 		ExtConfig.home = home;
 		ExtConfig.imports = parseStyles(styles) + parseScripts(scripts);
 	}
@@ -105,10 +102,6 @@ public class ExtConfig {
 
 	public static String getTreeDataProxy() {
 		return treeDataProxy;
-	}
-
-	public static String getTreeDataProxyUrl() {
-		return servletName + "/" + treeDataProxy;
 	}
 
 }
