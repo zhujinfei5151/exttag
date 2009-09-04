@@ -291,6 +291,7 @@ public abstract class ComponentTag extends ExtTag {
 						if (value != null) {
 							if (value instanceof String) {
 								if (method.isAnnotationPresent(Variable.class)
+                                        || method.isAnnotationPresent(Event.class)
 										|| isVariable((String) value))
 									value = new VariableWrapper(value);
 							}
