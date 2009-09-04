@@ -183,7 +183,7 @@ public class TldGenerator {
 		try {
 			new TldGenerator()
 					.generate(
-							"src/" + TldGenerator.class.getPackage().getName().replace('.', '/') + "/",
+							"src/" + TldGenerator.class.getPackage().getName().replace('.', '/') + "/tags/",
 							"src/META-INF/exttag.tld");
 		} catch (Exception e) {
 			e.printStackTrace();

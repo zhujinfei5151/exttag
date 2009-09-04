@@ -21,6 +21,8 @@ import com.googlecode.exttag.util.logger.LoggerFactory;
  */
 public abstract class ExtTag extends BodyTagSupport {
 
+    private static final long serialVersionUID = 1L;
+    
 	/**
 	 * 日志输出端
 	 */
@@ -96,7 +98,6 @@ public abstract class ExtTag extends BodyTagSupport {
 
 	private static final String COMPONENT_BUFFER_KEY = "____EXT_COMPONENT_BUFFER_KEY_____";
 
-	@SuppressWarnings("unchecked")
 	private final StringBuilder getComponentBuffer() {
 		StringBuilder buffer = (StringBuilder) super.pageContext.getAttribute(
 				COMPONENT_BUFFER_KEY, PageContext.PAGE_SCOPE);
@@ -118,7 +119,6 @@ public abstract class ExtTag extends BodyTagSupport {
 
 	private static final String STYLE_BUFFER_KEY = "____EXT_STYLE_BUFFER_KEY_____";
 
-	@SuppressWarnings("unchecked")
 	private final StringBuilder getStyleBuffer() {
 		StringBuilder buffer = (StringBuilder) super.pageContext.getAttribute(
 				STYLE_BUFFER_KEY, PageContext.PAGE_SCOPE);
@@ -140,7 +140,6 @@ public abstract class ExtTag extends BodyTagSupport {
 
 	private static final String BEFORE_SCRIPT_BUFFER_KEY = "____EXT_BEFORE_SCRIPT_BUFFER_KEY_____";
 
-	@SuppressWarnings("unchecked")
 	private final StringBuilder getBeforeScriptBuffer() {
 		StringBuilder buffer = (StringBuilder) super.pageContext.getAttribute(
 				BEFORE_SCRIPT_BUFFER_KEY, PageContext.PAGE_SCOPE);
@@ -162,7 +161,6 @@ public abstract class ExtTag extends BodyTagSupport {
 
 	private static final String AFTER_SCRIPT_BUFFER_KEY = "____EXT_AFTER_SCRIPT_BUFFER_KEY_____";
 
-	@SuppressWarnings("unchecked")
 	private final StringBuilder getAfterScriptBuffer() {
 		StringBuilder buffer = (StringBuilder) super.pageContext.getAttribute(
 				AFTER_SCRIPT_BUFFER_KEY, PageContext.PAGE_SCOPE);
